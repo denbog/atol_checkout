@@ -1,0 +1,10 @@
+.section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    &__tag {
+        background-color: var(--color-bg);
+        border-radius: var(--border-radius);
+    }
+}

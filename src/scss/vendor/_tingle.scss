@@ -1,0 +1,26 @@
+
+@import '../../../node_modules/tingle.js/src/tingle';
+
+
+.tingle-content {
+    ul {
+        text-align: left;
+        margin-top: 25px;
+
+        li {
+            position: relative;
+	        padding-left: 20px;
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                top: 10px;
+                left: 0;
+                background: var(--main-color);
+            }
+        }
+    }
+}

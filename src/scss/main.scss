@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+@use 'scss-reset/reset';
+
+// @import "@drewbot/sass-flexbox-grid/public/sass-flexbox/scss/main";
+@import "@drewbot/sass-flexbox-grid/public/sass-flexbox/main.css";
+
+// @import "bulma/sass/utilities/_all";
+// @import "bulma/sass/base/_all";
+// //@import "bulma/sass/elements/_all";
+// @import "bulma/sass/elements/container";
+// @import "bulma/sass/elements/content";
+// @import "bulma/sass/elements/button";
+// @import "bulma/sass/elements/image";
+// //@import "bulma/sass/form/_all";
+// //@import "bulma/sass/components/_all";
+// @import "bulma/sass/grid/_all";
+// //@import "bulma/sass/helpers/_all";
+// @import "bulma/sass/helpers/spacing";
+// @import "bulma/sass/helpers/typography";
+// @import "bulma/sass/helpers/visibility";
+// @import "bulma/sass/layout/section";
+
+@import "vendor/tingle";
+
+@import 
+    "base/fonts",
+    "base/variables",
+    "base/base",
+    "base/typography";
+
+@import 
+    "layout/header",
+    "layout/footer",
+    "layout/container",
+    "layout/section";
+
+@import 
+    "components/section-header",
+    "components/card",
+    "components/paralax";

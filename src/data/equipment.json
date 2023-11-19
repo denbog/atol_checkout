@@ -1,0 +1,31 @@
+{
+    "equipment": [
+        {
+            "name": "Фиск. регистратор АТОЛ 27Ф",
+            "price": "от 42 300 ₽",
+            "image": "img/DSC_1573_01_2.jpg",
+            "url": "https://www.atol.ru/catalog/atol-27f/"
+        },
+        {
+            "name": "Ручной сканер  Impulse 12",
+            "price": "от 4500 ₽",
+            "image": "img/DSC_1573_01_2-1.jpg",
+            "url": "https://www.atol.ru/catalog/atol-impulse-12/"
+        },
+        {
+            "name": "Напольная тумба для КСО",
+            "price": "от 56 000 ₽",
+            "image": "img/DSC_1573_01_2-4.jpg"
+        },
+        {
+            "name": "Напольная стойка для КСО",
+            "price": "от 34 000 ₽",
+            "image": "img/DSC_1573_01_2-2.jpg"
+        },
+        {
+            "name": "Настольная стойка для КСО",
+            "price": "от 16 000 ₽",
+            "image": "img/DSC_1573_01_2-3.jpg"
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сервис самообслуживания АТОЛ</title>
+    <meta name="description" content="Кассы самообслуживания для современного ритейла любого масштаба" />
+    <meta property="og:image" content="img/Frame_28_1.jpg" />
+</head>
+<body>
+    {% include "templates/partials/header.twig" %}
+
+    <main>
+        {% include "templates/sections/hero.twig" %}
+        {% include "templates/sections/advantages.twig" %}
+        {% include "templates/sections/business.twig" %}
+        {% include "templates/sections/catalog.twig" %}
+        {% include "templates/sections/about.twig" %}
+        {% include "templates/sections/equipment.twig" %}
+        {% include "templates/sections/paralax.twig" %}
+        {% include "templates/sections/security.twig" %}
+        {% include "templates/sections/consultation.twig" %}
+    </main>
+
+    {% include "templates/partials/footer.twig" %}
+    
+    <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

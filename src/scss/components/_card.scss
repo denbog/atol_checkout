@@ -1,0 +1,22 @@
+.card {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 2px 2px 20px 0px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+
+    &--hover-up {
+        transition: transform .75s;
+
+        &:hover {
+            transform: translateY(-10px);
+        }
+    }
+
+    &--hover-scale {
+        transition: transform .75s;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
