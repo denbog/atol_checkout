@@ -1,3 +1,5 @@
+@use 'sass-mq/mq';
+
 h1 {
     font-size: 40px;
     line-height: 1.5;
@@ -5,12 +7,39 @@ h1 {
 
 h2, .h2 {
     font-size: 40px;
+    font-weight: 500;
+
+    &:not(:last-child) {
+        margin-bottom: var(--margin);
+    }
+
+    @include mq.mq(lg) { 
+        font-size: clamp(30px, 3vw, 40px);
+    }
 }
 
-h3 {
+h3, .h3 {
     font-size: 30px;
+    font-weight: 500;
+
+    &:not(:last-child) {
+        margin-bottom: var(--margin);
+    }
 }
 
 h4 {
     font-size: 20px;
+    font-weight: 500;
+
+    &:not(:last-child) {
+        margin-bottom: var(--margin);
+    }
+}
+
+h5 {
+    font-weight: 500;
+
+    &:not(:last-child) {
+        margin-bottom: 15px;
+    }
 }

@@ -1,0 +1,67 @@
+@use 'sass-mq/mq';
+
+.action-item {
+    border-radius: var(--border-radius);
+    box-shadow: 2px 2px 20px 0px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: var(--block-margin);
+    padding: 40px 50% 40px 20px;
+    position: relative;
+
+    @include mq.mq(lg) {
+        min-height: 385px;
+    }
+
+    hr {
+        background: linear-gradient(89.98deg, #FFFFFF 50.02%, rgba(255, 255, 255, 0) 109.05%);
+        margin-bottom: var(--margin);
+    }
+
+    p {
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &--bg-dark {
+        background-color: var(--color-black);
+        color: var(--color-white);
+    }
+
+    &--bg-light {
+        background-color: var(--color-light);
+        color: var(--color-white);
+    }
+
+    &__media {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+
+        background-image: url('img/bg_2.svg');
+        background-position: bottom right;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        padding: 55px 20px 0 60%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+
+        img {
+            max-height: 100%;
+        }
+
+        @include mq.mq(lg) {
+            padding-left: 50%;
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 2;
+    }
+}

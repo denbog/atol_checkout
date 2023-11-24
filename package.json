@@ -17,6 +17,8 @@
   "dependencies": {
     "@drewbot/sass-flexbox-grid": "^2.0.7",
     "bulma": "^0.9.4",
+    "flexboxgrid-sass": "^8.0.5",
+    "sass-mq": "^6.0.0",
     "tingle.js": "^0.16.0"
   }
 }

@@ -3,7 +3,8 @@
 @use 'scss-reset/reset';
 
 // @import "@drewbot/sass-flexbox-grid/public/sass-flexbox/scss/main";
-@import "@drewbot/sass-flexbox-grid/public/sass-flexbox/main.css";
+//@import "@drewbot/sass-flexbox-grid/public/sass-flexbox/main.css";
+// @import "flexboxgrid-sass";
 
 // @import "bulma/sass/utilities/_all";
 // @import "bulma/sass/base/_all";
@@ -24,18 +25,27 @@
 @import "vendor/tingle";
 
 @import 
-    "base/fonts",
     "base/variables",
+    "base/fonts",
     "base/base",
     "base/typography";
 
 @import 
+    "layout/flexboxgrid",
     "layout/header",
     "layout/footer",
     "layout/container",
     "layout/section";
 
 @import 
+    "components/button",
+    "components/badge",
+    "components/flex-line",
     "components/section-header",
     "components/card",
+    "components/product",
+    "components/equipment",
+    "components/action-item",
+    "components/price-list",
+    "components/post-item",
     "components/paralax";

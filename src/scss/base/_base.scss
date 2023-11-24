@@ -1,16 +1,123 @@
+@use 'sass-mq/mq';
+
+:root {
+    --color-bg: #FAFAFA;
+    --color-red: #DF192C;
+    --color-black: #15141D;
+    --color-white: #FFFFFF;
+    --color-light: #C1C1C1;
+    --color-gray: rgba(0, 0, 0, 0.6);
+
+    --border-radius: 20px;
+    --margin: 20px;
+    --block-margin: 40px;
+}
 
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    color: #000;
+    color: var(--color-black);
     font-family: 'TT Firs Neue', Arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.2;
 }
 
+a {
+    color: var(--color-red);
+    text-decoration: none;
+}
+
+small {
+    font-size: 0.75em;
+}
+
+sup {
+    font-size: 0.5em;
+    top: -15px;
+}
+
 .color-red {
     color: var(--color-red);
+}
+.color-gray {
+    color: var(--color-gray);
+}
+
+.d-flex {
+    display: flex;
+
+    > * {
+        flex-basis: 100%;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+.text-nowrap {
+    white-space: nowrap;
+}
+
+.fs-20 {
+    font-size: 20px;
+}
+.fw-800 {
+    font-weight: 800;
+}
+
+.mb-20 {
+    margin-bottom: 20px!important;
+}
+
+.mt-a {
+    margin-top: auto;
+}
+.ms-a {
+    margin-left: auto;
+}
+
+[class*="show"] {
+    display: none!important;
+}
+@each $breakpoint, $i in $breakpoints { 
+    @include mq.mq($breakpoint) { 
+        .show-#{$breakpoint} { 
+            display: initial!important;
+        }
+    }
+}
+@each $breakpoint, $i in $breakpoints { 
+    @include mq.mq($breakpoint) { 
+        .hide-#{$breakpoint} { 
+            display: none!important;
+        }
+    }
+}
+
+
+.bg-atol {
+    background-image: url(img/bg.svg);
+    background-size: 100%;
+}
+
+
+
+
+.hover-up {
+    transition: transform .75s;
+
+    &:hover {
+        transform: translateY(-10px);
+    }
+}
+
+.hover-scale {
+    transition: transform .75s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 }

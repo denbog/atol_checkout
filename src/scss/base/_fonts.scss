@@ -9,3 +9,27 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'TT Firs Neue';
+    src: url('../fonts/TTFirsNeue-Medium.eot');
+    src: local('TT Firs Neue Medium'), local('TTFirsNeue-Medium'),
+        url('../fonts/TTFirsNeue-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TTFirsNeue-Medium.woff2') format('woff2'),
+        url('../fonts/TTFirsNeue-Medium.woff') format('woff'),
+        url('../fonts/TTFirsNeue-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Firs Neue';
+    src: url('../TTFirsNeue-ExtraBold.eot');
+    src: local('TT Firs Neue ExtraBold'), local('TTFirsNeue-ExtraBold'),
+        url('../TTFirsNeue-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('../TTFirsNeue-ExtraBold.woff2') format('woff2'),
+        url('../TTFirsNeue-ExtraBold.woff') format('woff'),
+        url('../TTFirsNeue-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}

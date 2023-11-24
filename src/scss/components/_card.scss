@@ -1,22 +1,31 @@
+@use 'sass-mq/mq';
+
 .card {
-    background-color: #fff;
+    background-color: var(--color-white);
     border-radius: var(--border-radius);
     box-shadow: 2px 2px 20px 0px rgba(0, 0, 0, 0.1);
-    padding: 20px;
 
-    &--hover-up {
-        transition: transform .75s;
+    margin-bottom: var(--block-margin);
+    padding: 10px 20px;
+    position: relative;
 
-        &:hover {
-            transform: translateY(-10px);
-        }
+    &__icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        max-width: 60px;
+        max-width: clamp(40px, 5vw, 60px);
     }
 
-    &--hover-scale {
-        transition: transform .75s;
 
-        &:hover {
-            transform: scale(1.05);
-        }
+    &--md-padding {
+        padding: 20px;
     }
+
+    &--big-padding {
+        padding: 40px 60px;
+    }
+}
+.card-ghost {
+    padding: 0 20px;
 }
