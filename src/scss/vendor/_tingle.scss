@@ -43,6 +43,12 @@
 
 .tingle-product {
     .tingle-modal-box {
-        width: 100vw;
+        background-color: var(--color-bg);
+
+        min-width: 90%;
+
+        @include mq.mq(xl) {
+            min-width: 1200px;
+        }
     }
 }

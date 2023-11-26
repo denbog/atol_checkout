@@ -1,0 +1,19 @@
+@import 'tippy.js/dist/tippy.css';
+
+.tippy-box[data-theme~='light'] {
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-radius: $border-radius;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: $box-shadow;
+    color: var(--color-black);
+
+    font-size: .75em;
+
+    max-width: 200px !important;
+    padding: 10px;
+    text-align: center;
+
+    .tippy-arrow {
+        display: none;
+    }
+}

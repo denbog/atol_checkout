@@ -131,11 +131,26 @@ p {
     margin-bottom: 50px!important;
 }
 
+@include mq.mq($until: sm) { 
+    .mb-sm-20 {
+        margin-bottom: 20px!important;
+    }
+}
+@include mq.mq($until: md) { 
+    .mb-md-20 {
+        margin-bottom: 20px!important;
+    }
+}
+
 .mt-a {
     margin-top: auto;
 }
 .ms-a {
     margin-left: auto;
+}
+
+.pb-0 {
+    padding-bottom: 0px!important;
 }
 
 [class*="show"],

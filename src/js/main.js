@@ -1,27 +1,37 @@
 import '@/scss/main.scss'
 
 import Swiper from 'swiper'
-import { Navigation } from 'swiper/modules'
+import { Navigation, Thumbs } from 'swiper/modules'
 import tingle from 'tingle.js'
+import baguetteBox from 'baguettebox.js'
+import tippy from 'tippy.js'
 
-Swiper.use([Navigation])
+tippy('[data-tooltip]', {
+    content: (reference) => reference.getAttribute('data-tooltip')
+});
 
-window.Swiper = Swiper
+tippy('[data-info]', {
+    content: (reference) => reference.getAttribute('data-info'),
+    trigger: 'click',
+    theme: 'light'
+});
 
-const productSwiper = new Swiper('.product-swiper', {
+Swiper.use([Navigation, Thumbs])
+
+const catalogSwiper = new Swiper('.catalog-swiper', {
     slidesPerView: 1,
     spaceBetween: 40,
     breakpoints: {
         768: {
-          slidesPerView: 2
+            slidesPerView: 2
         },
         992: {
-          slidesPerView: 3
+            slidesPerView: 3
         }
     },
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.catalog-button-next',
+        prevEl: '.catalog-button-prev',
     }
 })
 
@@ -30,18 +40,18 @@ const equipmentSwiper = new Swiper('.equipment-swiper', {
     spaceBetween: 40,
     breakpoints: {
         576: {
-          slidesPerView: 2
+            slidesPerView: 2
         },
         768: {
-          slidesPerView: 3
+            slidesPerView: 3
         },
         992: {
-          slidesPerView: 4
+            slidesPerView: 4
         }
     },
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.equipment-button-next',
+        prevEl: '.equipment-button-prev',
     }
 })
 
@@ -56,9 +66,33 @@ document.querySelectorAll('.tabs__button').forEach((el) => {
         const index = [...el.parentElement.children].indexOf(el)
 
         document.querySelector('.tabs__item--active').classList.remove('tabs__item--active')
-        document.querySelector('.tabs__item:nth-child('+(index + 1)+')').classList.add('tabs__item--active')
+        document.querySelector('.tabs__item:nth-child(' + (index + 1) + ')').classList.add('tabs__item--active')
     })
 })
+
+const initProduct = () => {
+    let swiper = new Swiper(".product-swiper-thumbs", {
+        loop: true,
+        spaceBetween: 20,
+        slidesPerView: 7,
+        freeMode: true,
+        watchSlidesProgress: true
+    });
+    let swiper2 = new Swiper(".product-swiper", {
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+            swiper: swiper
+        }
+    });
+
+    baguetteBox.run('.product-swiper', {
+        overlayBackgroundColor: '#fff'
+    })
+}
 
 document.querySelectorAll('.js-modal').forEach((el) => {
     el.addEventListener('click', (event) => {
@@ -70,7 +104,12 @@ document.querySelectorAll('.js-modal').forEach((el) => {
             closeMethods: ['overlay', 'button', 'escape'],
             closeLabel: "Закрыть",
             cssClass: [el.dataset.class || 'tingle-popup'],
-            onClose: function() {
+            onOpen: function () {
+                if (event.currentTarget.getAttribute('href').indexOf('product')) {
+                    initProduct()
+                }
+            },
+            onClose: function () {
                 modal.destroy();
             }
         })
@@ -91,14 +130,14 @@ document.querySelectorAll('.js-open-form').forEach((el) => {
                 closeMethods: ['overlay', 'button', 'escape'],
                 closeLabel: "Закрыть",
                 cssClass: ['tingle-popup'],
-                onClose: function() {
+                onClose: function () {
                     formModal.close();
                 }
             })
-    
+
             formModal.setContent(document.getElementById('form-callback'))
         }
-        
+
         formModal.open()
     })
 })

@@ -1,6 +1,12 @@
+@use 'sass-mq/mq';
+
 section {
     padding: 50px 0 calc(50px - var(--block-margin));
     position: relative;
+
+    @include mq.mq(lg) { 
+        padding: 60px 0 calc(60px - var(--block-margin))
+    }
 
     &.section-hero {
         padding-top: 25px;
@@ -22,7 +28,9 @@ section {
     }
 
     &.section-device {
-        overflow: hidden;
+        padding-top: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
 
         &::after {
             content: "";

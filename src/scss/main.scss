@@ -27,7 +27,8 @@
     "base/fonts",
     "base/base",
     "base/typography",
-    "base/form";
+    "base/form",
+    "base/table";
 
 @import 
     "layout/flexboxgrid",
@@ -50,12 +51,16 @@
     "components/price-list",
     "components/post-item",
     "components/paralax",
+    "components/chart",
     "components/tabs",
     "components/bussines-info",
     "components/device",
-    "components/device-advantages";
+    "components/device-advantages",
+    "components/point";
 
 
 @import 
     "vendor/swiper",
-    "vendor/tingle";
+    "vendor/tingle",
+    "vendor/baguettebox",
+    "vendor/tippy";

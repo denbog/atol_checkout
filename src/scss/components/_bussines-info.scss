@@ -1,10 +1,16 @@
+@use 'sass-mq/mq';
+
 .bussines-info {
     background: url('img/photo.jpg') no-repeat center;
     background-size: cover;
 
     border-radius: var(--border-radius);
+    
+    padding: 5% 10%;
 
-    padding: 70px 300px;
+    @include mq.mq(xl) {
+        padding: 70px 300px;
+    }
 
     p {
         margin-bottom: var(--margin);

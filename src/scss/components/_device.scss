@@ -1,3 +1,5 @@
+@use 'sass-mq/mq';
+
 .device {
     $p: &;
 
@@ -8,46 +10,17 @@
     height: 937px;
     width: 1160px;
 
-    &__point {
-        background-color: rgba(193, 193, 193, 0.5);
-        border-radius: 50%;
-
+    &-scroll-info {
+        color: var(--color-light);
+        
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
+        gap: 10px;
 
-        height: 40px;
-        width: 40px;
-
-        position: absolute;
-        z-index: 2;
-
-        animation: beat .75s infinite alternate;
-	    transform-origin: center;
-
-        &::before {
-            content: "";
-
-            background-color: rgba(255, 255, 255, 1);
-            border-radius: 50%;
-
-            display: block;
-
-            height: 24px;
-            width: 24px;
+        @include mq.mq(lg) { 
+            display: none;
         }
-    }
-
-    &__line{
-        background-color: #C1C1C1;
-
-        display: block;
-        height: 1px;
-        width: 275px;
-        
-        transform-origin: left;
-        position: absolute;
-        z-index: 1;
     }
 
     &__info {
@@ -82,82 +55,26 @@
         &--1 {
             left: 0px;
             top: 60px;
-
-            #{$p}__point {
-                left: 500px;
-                top: -20px;
-            }
-
-            #{$p}__line {
-                left: 520px;
-                top: 0px;
-                transform: rotate(170deg);
-            }
         }
 
         &--2 {
             left: 0px;
             top: 198px;
-
-            #{$p}__point {
-                left: 480px;
-                top: 30px;
-            }
-
-            #{$p}__line {
-                left: 500px;
-                top: 50px;
-                transform: rotate(183deg);
-            }
         }
 
         &--3 {
             left: 0px;
             top: 336px;
-
-            #{$p}__point {
-                left: 445px;
-                top: 20px;
-            }
-
-            #{$p}__line {
-                left: 465px;
-                top: 40px;
-                transform: rotate(175deg);
-            }
         }
 
         &--4 {
             left: 0px;
             top: 512px;
-
-            #{$p}__point {
-                left: 490px;
-                top: -25px;
-            }
-
-            #{$p}__line {
-                left: 510px;
-                top: -5px;
-                transform: rotate(166deg);
-            }
         }
 
         &--5 {
             left: 0px;
             top: 688px;
-
-            #{$p}__point {
-                left: 365px;
-                top: -100px;
-            }
-
-            #{$p}__line {
-                left: 385px;
-                top: -80px;
-                transform: rotate(129deg);
-                width: 155px;
-            }
         }
 
         &--6 {
@@ -166,17 +83,6 @@
 
             p {
                 margin-left: auto;
-            }
-
-            #{$p}__point {
-                left: 80px;
-                top: 115px;
-            }
-
-            #{$p}__line {
-                left: 100px;
-                top: 135px;
-                transform: rotate(341deg);
             }
         }
 
@@ -187,17 +93,6 @@
             p {
                 margin-left: auto;
             }
-
-            #{$p}__point {
-                left: 90px;
-                top: 95px;
-            }
-
-            #{$p}__line {
-                left: 110px;
-                top: 115px;
-                transform: rotate(341deg);
-            }
         }
 
         &--8 {
@@ -206,17 +101,6 @@
 
             p {
                 margin-left: auto;
-            }
-
-            #{$p}__point {
-                left: 85px;
-                top: 60px;
-            }
-
-            #{$p}__line {
-                left: 105px;
-                top: 80px;
-                transform: rotate(359deg);
             }
         }
 
@@ -227,17 +111,6 @@
             p {
                 margin-left: auto;
             }
-
-            #{$p}__point {
-                left: 20px;
-                top: -15px;
-            }
-
-            #{$p}__line {
-                left: 40px;
-                top: 5px;
-                transform: rotate(8deg);
-            }
         }
 
         &--10 {
@@ -247,21 +120,60 @@
             p {
                 margin-left: auto;
             }
-
-            #{$p}__point {
-                left: 70px;
-                top: -25px;
-            }
-
-            #{$p}__line {
-                left: 90px;
-                top: -5px;
-                transform: rotate(18deg);
-            }
         }
     }
-}
 
-@keyframes beat{
-	to { transform: scale(1.1); }
+    
+    .point.pos-1 {
+        --point-rotate: 170deg;
+        left: 524px;
+        top: 60px;
+    }
+    .point.pos-2 {
+        --point-rotate: 181deg;
+        left: 499px;
+        top: 246px;
+    }
+    .point.pos-3 {
+        --point-rotate: 174deg;
+        left: 465px;
+        top: 380px;
+    }
+    .point.pos-4 {
+        --point-rotate: 166deg;
+        left: 511px;
+        top: 509px;
+    }
+    .point.pos-5 {
+        --point-line-width: 180px;
+        --point-rotate: 129deg;
+
+        left: 385px;
+        top: 606px;
+    }
+    .point.pos-6 {
+        --point-rotate: 342deg;
+        left: 677px;
+        top: 195px;
+    }
+    .point.pos-7 {
+        --point-rotate: 345deg;
+        left: 690px;
+        top: 367px;
+    }
+    .point.pos-8 {
+        --point-rotate: 1deg;
+        left: 690px;
+        top: 483px;
+    }
+    .point.pos-9 {
+        --point-rotate: 9deg;
+        left: 624px;
+        top: 630px;
+    }
+    .point.pos-10 {
+        --point-rotate: 16deg;
+        left: 674px;
+        top: 763px;
+    }
 }

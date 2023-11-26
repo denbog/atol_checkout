@@ -1,3 +1,5 @@
+@use 'sass-mq/mq';
+
 .btn {
     --btn-bg-color: transparent;
     --btn-color: var(--color-black);
@@ -11,7 +13,6 @@
     display: inline-block;
 
     padding: 10px 20px;
-    min-width: 160px;
 
     text-align: center;
     text-decoration: none;
@@ -19,11 +20,19 @@
 
     transition: all .25s;
 
+    @include mq.mq($until: sm) {
+        display: block;
+        width: 100%;
+    }
+
     &:hover {
         --btn-color: var(--color-red);
         --btn-border-color: var(--color-red);
     }
 
+    &--160 {
+        min-width: 160px;
+    }
 
     &--red {
         --btn-bg-color: var(--color-red);

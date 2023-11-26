@@ -5,10 +5,12 @@
             <div class="section-header__tag">ККТ, ПО и оборудование</div>
         </div>
 
-        <div class="swiper equipment-swiper">
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+        <div class="swiper-navigation">
+            <div class="swiper-button-prev equipment-button-prev"></div>
+            <div class="swiper-button-next equipment-button-next"></div>
+        </div>
 
+        <div class="swiper flex-swiper equipment-swiper">
             <div class="swiper-wrapper">
                 {% for item in equipment %}
                 <div class="swiper-slide">
@@ -21,7 +23,7 @@
                                 {{ item.name }}
                             {% endif %}
                         </h4>
-                        <p class="fs-20 color-red mb-20">{{ item.price }}</p>
+                        <p class="fs-20 color-red mt-a mb-20">{{ item.price }}</p>
                     </div>
                 </div>
                 {% endfor %}

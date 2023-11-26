@@ -1,3 +1,5 @@
+@use 'sass-mq/mq';
+
 .device-advantages {
     $p: &;
 
@@ -7,74 +9,68 @@
     background-repeat: no-repeat;
     border-radius: var(--border-radius);
 
-    position: relative;
+    text-align: center;
 
-    width: 560px;
+    position: relative;
+    z-index: 2;
 
     &__media {
+        display: inline-block;
         left: -20px;
         position: relative;
 
         text-align: center;
-        transition: opacity .75s;
 
         img {
             max-height: 100%;
+            transition: opacity .75s;
         }
 
         & + & {
-            opacity: 0;
             position: absolute;
             top: 0;
             left: 40px;
             bottom: 0;
+            z-index: -1;
+
+            img {
+                opacity: 0;
+            }
         }
 
-        #{$p}:hover & {
-            opacity: 0;
-        }
-
-        #{$p}:hover & + & {
-            opacity: 1;
+        @include mq.mq(lg) {
+            #{$p}:hover & img {
+                opacity: 0;
+            }
+    
+            #{$p}:hover & + & img {
+                opacity: 1;
+            }
         }
     }
 
-    &__point {
-        background: rgba(250, 250, 250, 0.5);
-        border-radius: 50%;
-        height: 15px;
-        width: 15px;
+    --ponit-line-color: #fff;
+    --point-line-width: 120px;
 
-        position: absolute;
-        transform-origin: center;
+    .point.pos-1 {
+        --point-rotate: 190deg;
+        left: 35%;
+        top: 31%;
+    }
+    .point.pos-2 {
+        --point-rotate: 151deg;
+        left: 33.5%;
+        top: 60%;
+    }
+    .point.pos-3 {
+        --point-rotate: 280deg;
+        left: 77%;
+        top: 34%;
+    }
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        &::before {
-            content: "";
-
-            background-color: rgba(255, 255, 255, 1);
-            border-radius: 50%;
-
-            display: block;
-
-            height: 9px;
-            width: 9px;
-        }
-
-        &.pos-1 {
-            left: 175px;
-            top: 180px;
-        }
-        &.pos-2 {
-            left: 165px;
-            top: 365px;
-        }
-        &.pos-3 {
-            left: 400px;
-            top: 205px;
+    @include mq.mq($until: lg) {
+        .point::after {
+            content: none;
         }
     }
 
@@ -86,7 +82,7 @@
 
             border: 1px solid rgba(255, 255, 255, 1);
             border-radius: $border-radius;
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: rgba(255, 255, 255, 0.75);
             box-shadow: $box-shadow;
 
             font-size: .75em;
@@ -105,29 +101,44 @@
         }
 
         &.pos-1 {
+            display: none;
             left: -45px;
             top: 140px;
 
             p {
                 width: 145px;
             }
+
+            @include mq.mq(lg) {
+                display: block;
+            }
         }
 
         &.pos-2 {
+            display: none;
             left: -100px;
-            top: 355px;
+            bottom: 70px;
 
             p {
                 width: 180px;
             }
+
+            @include mq.mq(lg) {
+                display: block;
+            }
         }
 
         &.pos-3 {
-            left: 425px;
-            top: 67px;
+            display: none;
+            right: 10px;
+            top: 60px;
 
             p {
                 width: 125px;
+            }
+
+            @include mq.mq(lg) {
+                display: block;
             }
         }
     }
