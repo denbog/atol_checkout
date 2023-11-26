@@ -1,7 +1,7 @@
 @use 'sass-mq/mq';
 
 .card {
-    background-color: var(--color-white);
+    background-color: #FFFFFF;
     border-radius: var(--border-radius);
     box-shadow: 2px 2px 20px 0px rgba(0, 0, 0, 0.1);
 
@@ -15,6 +15,11 @@
         right: 20px;
         max-width: 60px;
         max-width: clamp(40px, 5vw, 60px);
+    }
+
+    &--opacity {
+        background: rgba(255, 255, 255, 0.9);
+
     }
 
 

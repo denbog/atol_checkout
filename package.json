@@ -19,6 +19,7 @@
     "bulma": "^0.9.4",
     "flexboxgrid-sass": "^8.0.5",
     "sass-mq": "^6.0.0",
+    "swiper": "^11.0.5",
     "tingle.js": "^0.16.0"
   }
 }

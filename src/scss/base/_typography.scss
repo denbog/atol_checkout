@@ -2,7 +2,13 @@
 
 h1 {
     font-size: 40px;
-    line-height: 1.5;
+    font-size: clamp(1.5rem, 3vw, 40px);
+    font-weight: 500;
+    line-height: 1.25;
+
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
 }
 
 h2, .h2 {
@@ -20,6 +26,7 @@ h2, .h2 {
 
 h3, .h3 {
     font-size: 30px;
+    font-size: clamp(1.25rem, 3vw, 30px);
     font-weight: 500;
 
     &:not(:last-child) {

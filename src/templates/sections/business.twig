@@ -1,46 +1,57 @@
-<section id="business">
+<section id="business" class="bg-light">
     <div class="container">
         <div class="section-header">
             <h3>Подберите решение под свой тип бизнеса</h3>
             <div class="section-header__tag">Кому подойдет КСО АТОЛ</div>
         </div>
 
-        <div class="tabs-nav">
-            <a href="">СУПЕРМАРКЕТ</a>
-            <a href="">МИНИМАРКЕТ / МАГАЗИН У ДОМА</a>
+        <div class="row center-xs">
+            <div class="col-xs-12 col-md-8">
+                <div class="tabs__nav">
+                    <button type="button" class="tabs__button">СУПЕРМАРКЕТ</button>
+                    <button type="button" class="tabs__button tabs__button--active">МИНИМАРКЕТ / МАГАЗИН У ДОМА</button>
+                </div>
+            </div>
         </div>
 
     </div>
 </section>
 
-<div class="tabs-holder">
-    <div class="tabs-item">
+<div class="tabs__holder bg-light">
+    <div class="tabs__item">
         <div class="container">
-            <div class="card card--opacity">
-                <p class="color-red">Средний бизнес, сетевая и несетевая розница (от 5–50 магазинов, от 500 м2, от 2000 SKU)</p>
-                <ul>
-                    <li>Перегруженный кассовый узел в период повышенного спроса, часто образуются очереди</li>
-                    <li>Невозможно оптимально распределить нагрузку на кассиров</li>
-                    <li>Большой ФОТ на кассиров</li>
-                    <li>Покупатель выбирает конкурентов с более быстрым обслуживанием</li>
-                </ul>
+            
+            <div class="bussines-info">
+                <div class="card card--big-padding card--opacity mb-0">
+                    <p class="color-red">Средний бизнес, сетевая и несетевая розница (от 5–50 магазинов, от 500 м2, от 2000 SKU)</p>
+                    <ul>
+                        <li>Перегруженный кассовый узел в период повышенного спроса, часто образуются очереди</li>
+                        <li>Невозможно оптимально распределить нагрузку на кассиров</li>
+                        <li>Большой ФОТ на кассиров</li>
+                        <li>Покупатель выбирает конкурентов с более быстрым обслуживанием</li>
+                    </ul>
+                </div>
             </div>
+            
         </div>
 
         {% include "pricelist.twig" %}
         {% include "statistics.twig" %}
     </div>
 
-    <div class="tabs-item">
+    <div class="tabs__item tabs__item--active">
         <div class="container">
-            <div class="card card--opacity">
-                <p class="color-red">Малый бизнес (до 10 магазинов)</p>
-                <ul>
-                    <li>Небольшая торговая площадь. Невозможно поставить дополнительный кассовый узел</li>
-                    <li>Нет бюджета на расширение ФОТ кассирам при росте трафика</li>
-                    <li>Очереди в пиковые часы</li>
-                    <li>Работа кассира 24\7</li>
-                </ul>
+            
+            <div class="bussines-info mb-50">
+                <div class="card card--big-padding card--opacity mb-0">
+                    <p class="color-red">Малый бизнес (до 10 магазинов)</p>
+                    <ul>
+                        <li>Небольшая торговая площадь. Невозможно поставить дополнительный кассовый узел</li>
+                        <li>Нет бюджета на расширение ФОТ кассирам при росте трафика</li>
+                        <li>Очереди в пиковые часы</li>
+                        <li>Работа кассира 24\7</li>
+                    </ul>
+                </div>
             </div>
         </div>
 

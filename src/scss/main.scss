@@ -22,13 +22,12 @@
 // @import "bulma/sass/helpers/visibility";
 // @import "bulma/sass/layout/section";
 
-@import "vendor/tingle";
-
 @import 
     "base/variables",
     "base/fonts",
     "base/base",
-    "base/typography";
+    "base/typography",
+    "base/form";
 
 @import 
     "layout/flexboxgrid",
@@ -43,9 +42,20 @@
     "components/flex-line",
     "components/section-header",
     "components/card",
+    "components/icon-box",
+    "components/frontol-banner",
     "components/product",
     "components/equipment",
     "components/action-item",
     "components/price-list",
     "components/post-item",
-    "components/paralax";
+    "components/paralax",
+    "components/tabs",
+    "components/bussines-info",
+    "components/device",
+    "components/device-advantages";
+
+
+@import 
+    "vendor/swiper",
+    "vendor/tingle";

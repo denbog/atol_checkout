@@ -2,7 +2,45 @@ section {
     padding: 50px 0 calc(50px - var(--block-margin));
     position: relative;
 
-    &.consultation {
+    &.section-hero {
+        padding-top: 25px;
+
+        &::after {
+            content: "";
+
+            background-color: var(--color-bg);
+
+            position: absolute;
+            z-index: -1;
+
+            height: 200px;
+            bottom: -80px;
+            left: 0;
+            right: 0;
+            transform: skewY(3deg);
+        }
+    }
+
+    &.section-device {
+        overflow: hidden;
+
+        &::after {
+            content: "";
+
+            background-color: var(--color-bg);
+
+            position: absolute;
+            z-index: 1;
+
+            height: 200px;
+            bottom: -160px;
+            left: 0;
+            right: 0;
+            transform: skewY(4deg);
+        }
+    }
+
+    &.section-consultation {
         background-color: var(--color-black);
         color: var(--color-white);
 
@@ -26,11 +64,5 @@ section {
         .container {
             position: relative;
         }
-    }
-
-    &.bg-light {
-        background-color: var(--color-light);
-        background-image: url(img/_2.svg);
-        background-size: 100%;
     }
 }

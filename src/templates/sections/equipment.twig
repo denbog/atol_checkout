@@ -1,26 +1,32 @@
-<section>
+<section class="bg-light">
     <div class="container">
         <div class="section-header">
             <h3>Кассовая техника и оборудование <br />для самообслуживания от лидера рынка</h3>
             <div class="section-header__tag">ККТ, ПО и оборудование</div>
         </div>
 
-        <div class="row">
-            {% for item in equipment %}
-            <div class="col-sm-12 col-md-4 col-lg-3">
-                <div class="card hover-scale equipment">
-                    <img src="{{ item.image }}" alt="{{ item.name }}">
-                    <h4>
-                        {% if item.url %}
-                            <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
-                        {% else %}
-                            {{ item.name }}
-                        {% endif %}
-                    </h4>
-                    <p class="fs-20 color-red mb-20">{{ item.price }}</p>
+        <div class="swiper equipment-swiper">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <div class="swiper-wrapper">
+                {% for item in equipment %}
+                <div class="swiper-slide">
+                    <div class="card hover-scale equipment">
+                        <img src="{{ item.image }}" alt="{{ item.name }}">
+                        <h4>
+                            {% if item.url %}
+                                <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
+                            {% else %}
+                                {{ item.name }}
+                            {% endif %}
+                        </h4>
+                        <p class="fs-20 color-red mb-20">{{ item.price }}</p>
+                    </div>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
+            
         </div>
 
     </div>

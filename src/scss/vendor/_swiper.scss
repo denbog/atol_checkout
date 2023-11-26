@@ -1,0 +1,35 @@
+@use 'sass-mq/mq';
+
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+
+.product-swiper {
+    overflow: visible;
+
+    .swiper-slide {
+        display: flex;
+        height: auto;
+
+        .product {
+            flex: 1;
+        }
+    }
+}
+
+.equipment-swiper {
+    overflow: visible;
+    
+    @include mq.mq(1380px) {
+        margin-right: -100px;
+        padding-right: 100px;
+    }
+
+    .swiper-slide {
+        display: flex;
+        height: auto;
+
+        .equipment {
+            flex: 1;
+        }
+    }
+}

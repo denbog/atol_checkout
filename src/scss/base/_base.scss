@@ -30,6 +30,10 @@ a {
     text-decoration: none;
 }
 
+strong {
+    font-weight: 500;
+}
+
 small {
     font-size: 0.75em;
 }
@@ -38,6 +42,49 @@ sup {
     font-size: 0.5em;
     top: -15px;
 }
+
+hr {
+    background: linear-gradient(89.98deg, #15141D 50.02%, rgba(21, 20, 29, 0) 109.05%);
+    margin: 20px 0;
+}
+
+p {
+    &:not(:last-child) {
+        margin-bottom: var(--margin);
+    }
+}
+
+
+
+.bg-light {
+    background-color: var(--color-bg);
+}
+
+.bg-alpha {
+    background-color: var(--color-light);
+    background-image: url(img/_2.svg);
+    background-size: 100%;
+}
+
+.bg-atol {
+    background-image: url(img/bg.svg);
+    background-size: 100%;
+}
+
+.bg-dark {
+    background: url(img/jhifon2ef.svg) no-repeat center;
+    background-size: cover;
+}
+
+.bg-callback {
+    background: url(img/shutterstock_1423205.png) no-repeat center;
+    background-size: cover;
+}
+
+.theme-dark {
+    color: var(--color-white)
+}
+
 
 .color-red {
     color: var(--color-red);
@@ -57,10 +104,16 @@ sup {
 .text-center {
     text-align: center;
 }
+.text-right {
+    text-align: right;
+}
 .text-nowrap {
     white-space: nowrap;
 }
 
+.fs-small {
+    font-size: .75em;
+}
 .fs-20 {
     font-size: 20px;
 }
@@ -68,8 +121,14 @@ sup {
     font-weight: 800;
 }
 
+.mb-0 {
+    margin-bottom: 0px!important;
+}
 .mb-20 {
     margin-bottom: 20px!important;
+}
+.mb-50 {
+    margin-bottom: 50px!important;
 }
 
 .mt-a {
@@ -79,7 +138,8 @@ sup {
     margin-left: auto;
 }
 
-[class*="show"] {
+[class*="show"],
+.hide {
     display: none!important;
 }
 @each $breakpoint, $i in $breakpoints { 
@@ -89,18 +149,13 @@ sup {
         }
     }
 }
+
 @each $breakpoint, $i in $breakpoints { 
     @include mq.mq($breakpoint) { 
         .hide-#{$breakpoint} { 
             display: none!important;
         }
     }
-}
-
-
-.bg-atol {
-    background-image: url(img/bg.svg);
-    background-size: 100%;
 }
 
 
@@ -114,10 +169,12 @@ sup {
     }
 }
 
-.hover-scale {
-    transition: transform .75s;
+@include mq.mq(md) { 
+    .hover-scale {
+        transition: transform .75s;
 
-    &:hover {
-        transform: scale(1.05);
+        &:hover {
+            transform: scale(1.05);
+        }
     }
 }

@@ -1,26 +1,48 @@
 
+@use 'sass-mq/mq';
+
 @import '../../../node_modules/tingle.js/src/tingle';
 
+.tingle-modal {
+    background: rgba(0, 0, 0, 0.65);
+}
 
-.tingle-content {
-    ul {
-        text-align: left;
-        margin-top: 25px;
+.tingle-popup {
+    .tingle-modal-box {
+        overflow: hidden;
 
-        li {
-            position: relative;
-	        padding-left: 20px;
-
-            &::before {
-                position: absolute;
-                content: '';
-                width: 6px;
-                height: 6px;
-                border-radius: 50%;
-                top: 10px;
-                left: 0;
-                background: var(--main-color);
-            }
+        @include mq.mq(sm) {
+            border-radius: var(--border-radius);
         }
+        @include mq.mq(lg) {
+            width: 960px;
+        }
+        
+        &__content {
+            background-color: var(--color-bg);
+            padding: 0;
+        }
+    }
+
+    @include mq.mq(lg) {
+        [class*="col-"].bg-dark {
+            margin-left: $gutter-compensation;
+            margin-right: $gutter-compensation;
+        }
+    }
+
+    &__content {
+        padding: 60px 40px;
+
+        .icon-box {
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+    }
+}
+
+.tingle-product {
+    .tingle-modal-box {
+        width: 100vw;
     }
 }

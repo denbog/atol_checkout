@@ -18,5 +18,9 @@
         @include mq.mq($until: md) { 
             display: none;
         }
+
+        .bg-light & {
+            background-color: var(--color-white);
+        }
     }
 }

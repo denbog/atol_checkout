@@ -1,0 +1,143 @@
+.device-advantages {
+    $p: &;
+
+    background: url(img/Rectangle_783.svg);
+    background-size: cover;
+    position: relative;
+    background-repeat: no-repeat;
+    border-radius: var(--border-radius);
+
+    position: relative;
+
+    width: 560px;
+
+    &__media {
+        left: -20px;
+        position: relative;
+
+        text-align: center;
+        transition: opacity .75s;
+
+        img {
+            max-height: 100%;
+        }
+
+        & + & {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 40px;
+            bottom: 0;
+        }
+
+        #{$p}:hover & {
+            opacity: 0;
+        }
+
+        #{$p}:hover & + & {
+            opacity: 1;
+        }
+    }
+
+    &__point {
+        background: rgba(250, 250, 250, 0.5);
+        border-radius: 50%;
+        height: 15px;
+        width: 15px;
+
+        position: absolute;
+        transform-origin: center;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::before {
+            content: "";
+
+            background-color: rgba(255, 255, 255, 1);
+            border-radius: 50%;
+
+            display: block;
+
+            height: 9px;
+            width: 9px;
+        }
+
+        &.pos-1 {
+            left: 175px;
+            top: 180px;
+        }
+        &.pos-2 {
+            left: 165px;
+            top: 365px;
+        }
+        &.pos-3 {
+            left: 400px;
+            top: 205px;
+        }
+    }
+
+    &__info {
+        position: absolute;
+
+        p {
+            pointer-events: none; 
+
+            border: 1px solid rgba(255, 255, 255, 1);
+            border-radius: $border-radius;
+            background-color: rgba(255, 255, 255, 0.5);
+            box-shadow: $box-shadow;
+
+            font-size: .75em;
+
+            padding: 10px;
+
+            position: relative;
+            z-index: 2;
+
+            img {
+                border-radius: $border-radius;
+                display: block;
+                margin: -5px -5px 10px;
+                max-width: calc(100% + 10px);
+            }
+        }
+
+        &.pos-1 {
+            left: -45px;
+            top: 140px;
+
+            p {
+                width: 145px;
+            }
+        }
+
+        &.pos-2 {
+            left: -100px;
+            top: 355px;
+
+            p {
+                width: 180px;
+            }
+        }
+
+        &.pos-3 {
+            left: 425px;
+            top: 67px;
+
+            p {
+                width: 125px;
+            }
+        }
+    }
+
+    &__badges {
+        display: flex;
+        gap: 5px;
+
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+    }
+}
