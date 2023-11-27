@@ -10,6 +10,7 @@ section {
 
     &.section-hero {
         padding-top: 25px;
+        overflow: hidden;
 
         &::after {
             content: "";
@@ -60,7 +61,7 @@ section {
 
         &::before {
             content: '';
-            background-image: url(img/man-working-in-a-cal.png);
+            background-image: url(../img/man-working-in-a-cal.png);
             background-size: contain;
             background-position: bottom right;
             background-repeat: no-repeat;

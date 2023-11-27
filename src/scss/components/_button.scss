@@ -65,7 +65,10 @@
 
     }
 
-    &--lg {
-        min-width: 300px;
+
+    @include mq.mq(sm) {
+        &--lg {
+            min-width: 300px;
+        }
     }
 }

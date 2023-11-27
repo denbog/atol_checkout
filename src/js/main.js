@@ -5,6 +5,9 @@ import { Navigation, Thumbs } from 'swiper/modules'
 import tingle from 'tingle.js'
 import baguetteBox from 'baguettebox.js'
 import tippy from 'tippy.js'
+import { MaskInput } from "maska"
+
+Swiper.use([Navigation, Thumbs])
 
 tippy('[data-tooltip]', {
     content: (reference) => reference.getAttribute('data-tooltip')
@@ -16,7 +19,7 @@ tippy('[data-info]', {
     theme: 'light'
 });
 
-Swiper.use([Navigation, Thumbs])
+new MaskInput('input[name="phone"]', { mask: "+7 (###) ###-##-##" })
 
 const catalogSwiper = new Swiper('.catalog-swiper', {
     slidesPerView: 1,
@@ -142,8 +145,26 @@ document.querySelectorAll('.js-open-form').forEach((el) => {
     })
 })
 
-document.querySelector('#form-callback form').addEventListener('submit', (event) => {
+document.querySelector('#form-callback form').addEventListener('submit', async (event) => {
     event.preventDefault()
 
-    console.log(event.target)
+    const form = event.currentTarget
+
+    let response = await fetch('https://atol.sandbox03.market.atol.tech/bitrix/services/main/ajax.php?mode=ajax&c=atol:form.checkout&action=submit', {
+        method: 'POST',
+		headers: {
+			"X-Bitrix-Csrf-Token": window.csrfToken || ''
+		},
+        body: new FormData(form)
+    });
+  
+    let result = await response.json();
+    console.log(form)
+
+    if ('error' == result.status) {
+        document.querySelector('#form-callback .js-form-error').classList.remove('hide')
+    } else {
+        form.classList.add('hide')
+        document.querySelector('#form-callback .js-form-success').classList.remove('hide')
+    }
 })

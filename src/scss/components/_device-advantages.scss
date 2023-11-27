@@ -3,7 +3,7 @@
 .device-advantages {
     $p: &;
 
-    background: url(img/Rectangle_783.svg);
+    background: url(../img/Rectangle_783.svg);
     background-size: cover;
     position: relative;
     background-repeat: no-repeat;
@@ -38,6 +38,23 @@
             }
         }
 
+        @include mq.mq(md) {
+            &:first-child::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -35%;
+                right: -22%;
+                bottom: 0;
+                z-index: 3;
+    
+                background-image: url(../img/Group_4000.svg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+
         @include mq.mq(lg) {
             #{$p}:hover & img {
                 opacity: 0;
@@ -53,17 +70,14 @@
     --point-line-width: 120px;
 
     .point.pos-1 {
-        --point-rotate: 190deg;
         left: 35%;
         top: 31%;
     }
     .point.pos-2 {
-        --point-rotate: 151deg;
         left: 33.5%;
         top: 60%;
     }
     .point.pos-3 {
-        --point-rotate: 280deg;
         left: 77%;
         top: 34%;
     }
