@@ -25,7 +25,8 @@
 
     &__info {
         position: absolute;
-
+        z-index: 12;
+        
         width: 50%;
 
         p {

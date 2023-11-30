@@ -11,6 +11,7 @@
 }
 
 .price-list {
+    $p: &;
     $clr-bg: #E2E5EE;
     $clr-result: #DF192C;
 
@@ -90,6 +91,24 @@
 
         &--2 {
             grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @include mq.mq($until: lg) { 
+        &__table {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            #{$p}__label {
+                border-radius: $border-radius;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+            #{$p}__value, #{$p}__result {
+                border-radius: $border-radius;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
         }
     }
 }

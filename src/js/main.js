@@ -150,7 +150,7 @@ document.querySelector('#form-callback form').addEventListener('submit', async (
 
     const form = event.currentTarget
 
-    let response = await fetch('https://atol.sandbox03.market.atol.tech/bitrix/services/main/ajax.php?mode=ajax&c=atol:form.checkout&action=submit', {
+    let response = await fetch('/bitrix/services/main/ajax.php?mode=ajax&c=atol:form.checkout&action=submit', {
         method: 'POST',
 		headers: {
 			"X-Bitrix-Csrf-Token": window.csrfToken || ''
