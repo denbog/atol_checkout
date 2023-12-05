@@ -34,6 +34,10 @@
         min-width: 160px;
     }
 
+    &--block {
+        width: 100%;
+    }
+
     &--red {
         --btn-bg-color: var(--color-red);
         --btn-color: var(--color-white);
@@ -62,7 +66,19 @@
             --btn-color: var(--color-black);
             --btn-border-color: var(--color-white);
         }
+    }
 
+    &--link {
+        --btn-border-color: transparent;
+        --btn-color: var(--color-red);
+
+        font-size: .85em;
+        padding-inline: 0;
+
+        &:hover {
+            --btn-border-color: transparent;
+            text-decoration: underline;
+        }
     }
 
 
