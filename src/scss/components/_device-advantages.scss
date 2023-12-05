@@ -32,9 +32,12 @@
             left: 40px;
             bottom: 0;
             z-index: -1;
+            overflow: hidden;
 
             img {
                 opacity: 0;
+                transform: scale(1.06);
+                transform-origin: top;
             }
         }
 
