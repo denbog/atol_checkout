@@ -21,6 +21,7 @@
         &__content {
             background-color: var(--color-bg);
             padding: 0;
+            overflow: hidden auto;
         }
     }
 
@@ -32,7 +33,11 @@
     }
 
     &__content {
-        padding: 60px 40px;
+        padding: 30px 20px;
+
+        @include mq.mq(sm) {
+            padding: 60px 40px;
+        }
 
         .icon-box {
             margin-left: -20px;

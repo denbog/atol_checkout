@@ -6,6 +6,51 @@ import tingle from 'tingle.js'
 import baguetteBox from 'baguettebox.js'
 import tippy from 'tippy.js'
 import { MaskInput } from "maska"
+import autoComplete from "@tarekraafat/autocomplete.js"
+
+
+new MaskInput('input[name="phone"]', { mask: "+7 (###) ###-##-##" })
+
+const autoCompleteJS = new autoComplete({
+    selector: 'input[name="city"]',
+    debounce: 500,
+    threshold: 2,
+    searchEngine: 'loose',
+    data: {
+        src: async (query) => {
+            try {
+                const resp = await fetch('https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address', {
+                    method: 'post',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Token 4808f665f589bfae7380e2f522dff85fe8d80ef3'
+                    },
+                    body: JSON.stringify({
+                        query: query,
+                        from_bound: { value: "city" },
+                        to_bound: { value: "city" }
+                    })
+                })
+
+                const json = await resp.json()
+
+                return json.suggestions
+            } catch (error) {
+                return error
+            }
+        },
+        keys: ['value']
+    }
+})
+
+autoCompleteJS.input.addEventListener('selection', function (event) {
+    const selection = event.detail.selection.value
+
+    autoCompleteJS.input.blur()
+    autoCompleteJS.input.value = selection.value
+
+    document.querySelector('input[name="place"]').value = selection.data.region_with_type || ''
+})
 
 Swiper.use([Navigation, Thumbs])
 
@@ -18,8 +63,6 @@ tippy('[data-info]', {
     trigger: 'click',
     theme: 'light'
 });
-
-new MaskInput('input[name="phone"]', { mask: "+7 (###) ###-##-##" })
 
 const catalogSwiper = new Swiper('.catalog-swiper', {
     slidesPerView: 1,
@@ -149,17 +192,19 @@ document.querySelector('#form-callback form').addEventListener('submit', async (
     event.preventDefault()
 
     const form = event.currentTarget
+    const formData = new FormData(form)
+    
+    formData.set('back_url', window.location.href)
 
-    let response = await fetch('/bitrix/services/main/ajax.php?mode=ajax&c=atol:form.checkout&action=submit', {
+    let response = await fetch('/bitrix/services/main/ajax.php?mode=ajax&c=atol:form.landing&action=submit', {
         method: 'POST',
 		headers: {
 			"X-Bitrix-Csrf-Token": window.csrfToken || ''
 		},
-        body: new FormData(form)
+        body: formData
     });
   
     let result = await response.json();
-    console.log(form)
 
     if ('error' == result.status) {
         document.querySelector('#form-callback .js-form-error').classList.remove('hide')
