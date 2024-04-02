@@ -1,16 +1,16 @@
 {
     "equipment": [
         {
-            "name": "Фиск. регистратор АТОЛ 27Ф",
-            "price": "от 42 300 ₽",
-            "image": "img/DSC_1573_01_2.jpg",
+            "name": "Онлайн-касса АТОЛ&nbsp;27Ф",
+            "price": "от 37 500 ₽",
+            "image": "img/atol-27f.png",
             "url": "https://www.atol.ru/catalog/atol-27f/"
         },
         {
-            "name": "Ручной сканер  Impulse 12",
-            "price": "от 4500 ₽",
-            "image": "img/DSC_1573_01_2-1.jpg",
-            "url": "https://www.atol.ru/catalog/atol-impulse-12/"
+            "name": "Сканер штрихкода АТОЛ&nbsp;SB2108&nbsp;Plus",
+            "price": "от 3900 ₽",
+            "image": "img/IMG_0107.jpg",
+            "url": "https://www.atol.ru/catalog/skaner-shtrikhkoda-atol-sb2108-plus/"
         },
         {
             "name": "Напольная тумба для КСО",
