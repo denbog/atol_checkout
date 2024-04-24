@@ -1,7 +1,7 @@
 import '@/scss/main.scss'
 
 import Swiper from 'swiper'
-import { Navigation, Thumbs } from 'swiper/modules'
+import { Autoplay, FreeMode, Navigation, Thumbs } from 'swiper/modules'
 import tingle from 'tingle.js'
 import baguetteBox from 'baguettebox.js'
 import tippy from 'tippy.js'
@@ -52,7 +52,7 @@ autoCompleteJS.input.addEventListener('selection', function (event) {
     document.querySelector('input[name="place"]').value = selection.data.region_with_type || ''
 })
 
-Swiper.use([Navigation, Thumbs])
+Swiper.use([Autoplay, FreeMode, Navigation, Thumbs])
 
 tippy('[data-tooltip]', {
     content: (reference) => reference.getAttribute('data-tooltip')
@@ -78,6 +78,16 @@ const catalogSwiper = new Swiper('.catalog-swiper', {
     navigation: {
         nextEl: '.catalog-button-next',
         prevEl: '.catalog-button-prev',
+    },
+    speed: 5000,
+    loop: true,
+    freeMode: {
+        enabled: true,
+        momentumBounce: false
+    },
+    autoplay: {
+        delay: 0,
+        disableOnInteraction: true
     }
 })
 
