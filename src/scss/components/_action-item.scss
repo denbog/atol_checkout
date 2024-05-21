@@ -69,4 +69,12 @@
             }
         }
     }
+
+    &__ad {
+        color: rgba(226, 229, 238, 0.65);
+        font-size: 0.65em;
+        position: absolute;
+        left: 20px;
+        bottom: 10px;
+    }
 }
