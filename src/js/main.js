@@ -111,6 +111,23 @@ const equipmentSwiper = new Swiper('.equipment-swiper', {
     }
 })
 
+const casesSwiper = new Swiper('.cases-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 40,
+    breakpoints: {
+        576: {
+            slidesPerView: 2
+        },
+        992: {
+            slidesPerView: 2
+        },
+    },
+    navigation: {
+        nextEl: '.cases-button-next',
+        prevEl: '.cases-button-prev',
+    }
+})
+
 
 document.querySelectorAll('.tabs__button').forEach((el) => {
     el.addEventListener('click', (event) => {

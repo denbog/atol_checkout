@@ -1,0 +1,30 @@
+<section id="cases">
+    <div class="container">
+        <div class="section-header">
+            <div>
+                <h3>Посмотрите объекты, где уже<br /> работают наши терминалы</h3>
+            </div>
+            <div class="section-header__tag">Кейсы и партнеры</div>
+        </div>
+
+        <div class="swiper-navigation">
+            <div class="swiper-button-prev cases-button-prev"></div>
+            <div class="swiper-button-next cases-button-next"></div>
+        </div>
+
+        <div class="swiper flex-swiper cases-swiper">
+            <div class="swiper-wrapper">
+                {% for item in cases %}
+                <div class="swiper-slide">
+                    <div class="card case hover-scale">
+                        <img src="{{ item.image }}" alt="{{ item.name }}">
+                        <div class="case__content">
+                            <h4 class="case__title"><a href="{{ item.url }}" target="_blank">{{ item.title }}</a></h4>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

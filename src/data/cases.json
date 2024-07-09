@@ -1,0 +1,16 @@
+{
+    "cases": [
+        {
+            "name": "Внедрение касс самообслуживания АТОЛ на АЗС «Роснефть»",
+            "title": "Внедрение касс самообслуживания АТОЛ на АЗС&nbsp;&laquo;Роснефть&raquo;",
+            "image": "img/case-1.jpg",
+            "url": "https://www.atol.ru/keysy-otzyvy/keysy/keys-rosneft/"
+        },
+        {
+            "name": "Установка КСО АТОЛ в сеть зоомагазинов «Четыре Лапы»",
+            "title": "Установка КСО АТОЛ в&nbsp;сеть зоомагазинов «Четыре&nbsp;Лапы»",
+            "image": "img/case-2.jpg",
+            "url": "https://www.atol.ru/keysy-otzyvy/keysy/keys-chetyre-lapy/"
+        }
+    ]
+}
